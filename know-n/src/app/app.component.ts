@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { SocrataService } from './socrata.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Know`N';
+  sd = null;
+  constructor(private socrata: SocrataService) {
+      sd = socrata.;
+   }
+
+  this.sd.
 }
