@@ -9,7 +9,7 @@ export class SocrataService {
    }
 
    getData () {
-     this.httpClient
+     return this.httpClient
      .get('https://brigades.opendatanetwork.com/resource/rb2w-i8ye.json', {headers: {'X-App-Token' : 'Gb6VCUBNsrLNh9XMfWHVN9YPk'}});
    }
 

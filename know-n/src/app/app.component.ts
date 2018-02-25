@@ -8,11 +8,17 @@ import { SocrataService } from './socrata.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Know`N';
-  sd = null;
-  constructor(private socrata: SocrataService) {
-      sd = socrata.;
-   }
+  title = 'Get in the know!';
+  sdOjbects = [];
 
-  this.sd.
+  constructor(private socrata: SocrataService) {}
+
+  getServiceData() {
+    this.socrata.getData().forEach(
+      (val) => {
+        val.forEach(element => {
+          _this.sdOjbects.push(element); 
+        }); 
+      }
+    )}
 }

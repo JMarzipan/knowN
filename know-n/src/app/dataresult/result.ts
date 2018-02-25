@@ -1,4 +1,1 @@
-public class schoolstuff {
-
-    
-}
+class Schoolstuff {}
