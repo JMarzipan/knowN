@@ -16,9 +16,7 @@ export class AppComponent {
   getServiceData() {
     this.socrata.getData().forEach(
       (val) => {
-        val.forEach(element => {
-          this.sdOjbects.push(element); 
-        }); 
-      }
+          this.sdOjbects.push(val); 
+        }
     )}
 }
