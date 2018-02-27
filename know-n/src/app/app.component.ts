@@ -14,9 +14,10 @@ export class AppComponent {
   constructor(private socrata: SocrataService) {}
 
   getServiceData() {
-    this.socrata.getData().forEach(
-      (val) => {
-          this.sdOjbects.push(val); 
-        }
-    )}
+    this.socrata.getData().subscribe(
+      (item) => {
+        this.sdOjbects.push(item);
+      }
+    );
+}
 }
