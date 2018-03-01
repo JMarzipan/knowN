@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { SocrataService } from './socrata.service';
+import { SchoolStuff } from './dataresult/schoolstuff';
 
 @Component({
   selector: 'app-root',
@@ -9,14 +10,17 @@ import { SocrataService } from './socrata.service';
 })
 export class AppComponent {
   title = 'Get in the know!';
-  sdOjbects = [];
+  sdOjbects: SchoolStuff[];
 
   constructor(private socrata: SocrataService) {}
 
   getServiceData() {
     this.socrata.getData().subscribe(
-      (item) => {
-        this.sdOjbects.push(item);
+      (items) => {
+        this.sdOjbects = items;
+      },
+      (error) => {
+        alert(error);
       }
     );
 }
