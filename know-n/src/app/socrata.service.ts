@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { SchoolStuff} from './dataresult/schoolstuff';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class SocrataService {
@@ -10,7 +11,7 @@ export class SocrataService {
 
    getData () {
      return this.httpClient
-     .get<SchoolStuff[]>(
+     .get(
        'https://brigades.opendatanetwork.com/resource/rb2w-i8ye.json',
         {headers:
           {'X-App-Token' : 'Gb6VCUBNsrLNh9XMfWHVN9YPk'}

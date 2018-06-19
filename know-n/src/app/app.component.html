@@ -9,9 +9,9 @@
 </div>
 <div>
   <ul>
-    <li *ngFor="let sdo of sdObjects">
-      {{ sdo.school }}
+    <li *ngFor="let sdo of sdOjbects">
+      <span>Diversity Score:</span>{{ sdo.diversity_score }} -- <span>School Disctrict:</span>{{ sdo.school}} -- <span>Ethnicity:</span>{{sdo.ethnicity}} --<span>System:</span>{{ sdo.system}}<span>Month:</span>{{ sdo.month }}
     </li>
   </ul>
-
+<span>{{ sdObjects | json }}</span>
 </div>
